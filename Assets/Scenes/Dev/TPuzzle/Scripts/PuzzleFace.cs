@@ -25,9 +25,13 @@ public class PuzzleFace : MonoBehaviour
 
     public void SetVertexTargets()
     {
-        foreach (PuzzleVertex vertex in vertices)
+        if (targetFace)
         {
-            vertex.SetTargetVertex(targetFace.vertices);
+            foreach (PuzzleVertex vertex in vertices)
+            {
+                vertex.SetTargetVertex(targetFace.vertices);
+            }
+
         }
     }
 

@@ -51,18 +51,19 @@ public class PuzzleVertex : MonoBehaviour
             }
         }
     }
-
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if(collision.gameObject == targetVertex.gameObject)
+        print("Collision");
+        if (other.gameObject == targetVertex.gameObject)
         {
+            print("Correct Colission");
             collidingWithTargetVertex = true;
         }
     }
 
-    private void OnCollisionExit(Collision collision) 
+    private void OnTriggerExit(Collider other)
     {
-        if (collision.gameObject == targetVertex.gameObject)
+        if (other.gameObject == targetVertex.gameObject)
         {
             collidingWithTargetVertex = false;
         }
