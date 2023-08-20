@@ -53,10 +53,8 @@ public class PuzzleVertex : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        print("Collision");
         if (other.gameObject == targetVertex.gameObject)
         {
-            print("Correct Colission");
             collidingWithTargetVertex = true;
         }
     }
