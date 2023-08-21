@@ -71,7 +71,7 @@ public class HanoiDisk : MonoBehaviour
                 Vector3 direction = new Vector3(objPosition.x, 1.79f, 0.024f);
 
                 //transform.localPosition = transform.TransformDirection(direction);
-                transform.localPosition = new Vector3(transform.TransformDirection(direction).x *2f, 1.79f, 0.024f);
+                transform.localPosition = new Vector3(transform.TransformDirection(direction).x *3f, 1.79f, 0.024f);
             }
             //Vector3 objPosition = Camera.main.ScreenToWorldPoint(mousePosition);
             ////Vector3 objPosition = new Vector3(Input.mousePosition.x, 1.68f, currentX);
@@ -88,7 +88,7 @@ public class HanoiDisk : MonoBehaviour
             //Vector3 A = new Vector3(transform.position.x, 1.73f, originalZ);
             //transform.position = A;
             if (transform.localPosition.y < 1.79f)
-                transform.Translate(Vector3.up * 2f * Time.deltaTime);
+                transform.Translate(Vector3.up * 3f * Time.deltaTime);
         }
     }
 
