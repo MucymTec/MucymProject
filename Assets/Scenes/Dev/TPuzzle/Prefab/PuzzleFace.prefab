@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2253820336909518404}
   m_Layer: 0
   m_Name: Vertex1
-  m_TagString: Untagged
+  m_TagString: PuzzleVertex
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -64,6 +64,7 @@ MonoBehaviour:
   position: 1
   targetVertex: {fileID: 4370230946994065538}
   collidingWithTargetVertex: 0
+  setingCollidingVertex: 0
 --- !u!33 &2136819095200176645
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -92,7 +93,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f5c03b7d48332454cbf96bd82bc98f12, type: 2}
+  - {fileID: 2100000, guid: 7577d864c7cf7be459f6bc5b36f94608, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -146,7 +147,7 @@ GameObject:
   - component: {fileID: 5339901165979747151}
   m_Layer: 0
   m_Name: Vertex2
-  m_TagString: Untagged
+  m_TagString: PuzzleVertex
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -194,6 +195,7 @@ MonoBehaviour:
   position: 0
   targetVertex: {fileID: 8252644019044208262}
   collidingWithTargetVertex: 0
+  setingCollidingVertex: 0
 --- !u!33 &2854602197767764387
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -222,7 +224,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f5c03b7d48332454cbf96bd82bc98f12, type: 2}
+  - {fileID: 2100000, guid: b6520ef843a5ab244a97e0a0da1c1f4b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -311,7 +313,6 @@ MonoBehaviour:
   width: 0
   height: 0
   vertexScale: 0.1
-  targetFace: {fileID: 0}
   vertices:
   - {fileID: 4370230946994065538}
   - {fileID: 8252644019044208262}
@@ -333,7 +334,7 @@ GameObject:
   - component: {fileID: 8399867881437375729}
   m_Layer: 0
   m_Name: Vertex3
-  m_TagString: Untagged
+  m_TagString: PuzzleVertex
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -381,6 +382,7 @@ MonoBehaviour:
   position: 2
   targetVertex: {fileID: 5013928049231823049}
   collidingWithTargetVertex: 0
+  setingCollidingVertex: 0
 --- !u!33 &9205915718862080232
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -409,7 +411,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f5c03b7d48332454cbf96bd82bc98f12, type: 2}
+  - {fileID: 2100000, guid: 8f481a57f8645a0408ebd802046d1782, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -463,7 +465,7 @@ GameObject:
   - component: {fileID: 5869251874508143804}
   m_Layer: 0
   m_Name: Vertex4
-  m_TagString: Untagged
+  m_TagString: PuzzleVertex
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -511,6 +513,7 @@ MonoBehaviour:
   position: 3
   targetVertex: {fileID: 1435243650835108660}
   collidingWithTargetVertex: 0
+  setingCollidingVertex: 0
 --- !u!33 &5007134838835265623
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -539,7 +542,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f5c03b7d48332454cbf96bd82bc98f12, type: 2}
+  - {fileID: 2100000, guid: 589226f666b01bb48a1ac6cf03615d69, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

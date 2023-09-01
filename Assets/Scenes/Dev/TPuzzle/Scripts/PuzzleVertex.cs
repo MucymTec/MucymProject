@@ -1,9 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public enum Positions { TopRight,TopLeft,BottomRight,BottomLeft}
 
+[ExecuteInEditMode]
 public class PuzzleVertex : MonoBehaviour
 {
     public Positions position;
@@ -51,6 +53,24 @@ public class PuzzleVertex : MonoBehaviour
             }
         }
     }
+
+    public void DetectVertexCollision()
+    {
+        Collider[] hitColliders = Physics.OverlapBox(transform.position, transform.localScale/2);
+        foreach (Collider collider in hitColliders)
+        {
+            if(collider.tag == "PuzzleVertex" && collider.gameObject != gameObject)
+            {
+                PuzzleVertex vertex = collider.GetComponent<PuzzleVertex>();
+                print(vertex.gameObject.name);
+                if (vertex.position == position) 
+                {
+                    targetVertex = vertex;
+                }
+            }
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject == targetVertex.gameObject)
@@ -65,5 +85,16 @@ public class PuzzleVertex : MonoBehaviour
         {
             collidingWithTargetVertex = false;
         }
+    }
+
+    internal void NotifyTargetFace(bool inCorrectPosition)
+    {
+        targetVertex.gameObject.transform.parent.GetComponent<PuzzleFace>().inCorrectPosition = inCorrectPosition;
+    }
+
+    private void OnValidate()
+    {
+        print("Heropo");
+        targetVertex = targetVertex;
     }
 }

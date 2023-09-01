@@ -10,8 +10,8 @@ public class PuzzleFace : MonoBehaviour
     public float height = 1f;
     //Hacer mas pequena esta escala si se quiere que el choque entre las partes se mas preciso. Hacer mas grande si se quiere dar mas facilidad de que se encuentren las caras.
     public float vertexScale = .1f;
-    public PuzzleFace targetFace;
     public PuzzleVertex[] vertices;
+    public bool inCorrectPosition;
 
     private void Awake()
     {
@@ -25,13 +25,9 @@ public class PuzzleFace : MonoBehaviour
 
     public void SetVertexTargets()
     {
-        if (targetFace)
+        foreach (PuzzleVertex vertex in vertices)
         {
-            foreach (PuzzleVertex vertex in vertices)
-            {
-                vertex.SetTargetVertex(targetFace.vertices);
-            }
-
+            vertex.DetectVertexCollision(); 
         }
     }
 
@@ -51,7 +47,6 @@ public class PuzzleFace : MonoBehaviour
         {
             vertex.AdjustSize(vertexScale);
         }
-
     }
 
     //Used to check if the face is in the correct position with the targetFace
@@ -60,10 +55,14 @@ public class PuzzleFace : MonoBehaviour
         foreach (PuzzleVertex vertex in vertices)
         {
             if (!vertex.collidingWithTargetVertex) 
-            { 
+            {
+                inCorrectPosition = false;
+                vertices[0].NotifyTargetFace(inCorrectPosition);
                 return false;
             }
         }
+        inCorrectPosition = true;
+        vertices[0].NotifyTargetFace(inCorrectPosition);
         return true;
     }
 
@@ -71,7 +70,6 @@ public class PuzzleFace : MonoBehaviour
     {
         SetDimensions();
         ChageSize();
-        SetVertexTargets();
     }
 
 }
