@@ -62,7 +62,6 @@ public class PuzzleVertex : MonoBehaviour
             if(collider.tag == "PuzzleVertex" && collider.gameObject != gameObject)
             {
                 PuzzleVertex vertex = collider.GetComponent<PuzzleVertex>();
-                print(vertex.gameObject.name);
                 if (vertex.position == position) 
                 {
                     targetVertex = vertex;
@@ -90,11 +89,5 @@ public class PuzzleVertex : MonoBehaviour
     internal void NotifyTargetFace(bool inCorrectPosition)
     {
         targetVertex.gameObject.transform.parent.GetComponent<PuzzleFace>().inCorrectPosition = inCorrectPosition;
-    }
-
-    private void OnValidate()
-    {
-        print("Heropo");
-        targetVertex = targetVertex;
     }
 }

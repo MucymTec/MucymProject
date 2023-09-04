@@ -18,25 +18,11 @@ public class PuzzleFace : MonoBehaviour
         vertices = transform.GetComponentsInChildren<PuzzleVertex>();
     }
 
-    //From origin create 4 colliders.
-    //Colliders will have a width and a height from the origin point(parent).
-    //Collider size will be defined by a parameter. .1 by default.
-    //Each collider will have a target to attach to. I can make that Vertex 1 ALWAYS have to collide with vertex 1 from the other part.
-
     public void SetVertexTargets()
     {
         foreach (PuzzleVertex vertex in vertices)
         {
             vertex.DetectVertexCollision(); 
-        }
-    }
-
-    //Triggered when width or height is changed in the editor.
-    public void SetDimensions() 
-    { 
-        foreach(PuzzleVertex vertex in vertices)
-        {
-            vertex.AdjustPosition(height, width,transform.position);
         }
     }
 
@@ -68,7 +54,6 @@ public class PuzzleFace : MonoBehaviour
 
     private void OnValidate()
     {
-        SetDimensions();
         ChageSize();
     }
 

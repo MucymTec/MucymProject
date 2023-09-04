@@ -12,30 +12,24 @@ public class PuzzleFigure : MonoBehaviour
     //If one vertex is touching another then asing as target face.
     public PuzzleFace[] faces;
 
-    public bool checkFigureIsComplete()
+    //Todo: Implementar llamar desde un boton de evento.
+    public void CheckFigureIsComplete()
     {
         foreach(PuzzleFace face in faces) {
-            if (!face.inCorrectPosition)
-            {
                 if (!face.CheckAllVertexColliding())
                 {
-                    return false;
+                    print("Not complete");
+                    break;
+//                    return false;
                 }
-            }
         }
-        return true;
-    }
-
-    private void Update()
-    {
-        if(checkFigureIsComplete())
-        {
-            print("Complete");
-        }
+        
+      //  return true;
     }
 
     private void Awake()
     {
+        faces = GetComponentsInChildren<PuzzleFace>();
         foreach (PuzzleFace face in faces) {
             face.SetVertexTargets();
         }

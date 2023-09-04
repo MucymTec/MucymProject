@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5404684187477405414}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.307}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -64,7 +64,6 @@ MonoBehaviour:
   position: 1
   targetVertex: {fileID: 4370230946994065538}
   collidingWithTargetVertex: 0
-  setingCollidingVertex: 0
 --- !u!33 &2136819095200176645
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -160,7 +159,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5404684187842983892}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0.244}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -195,7 +194,6 @@ MonoBehaviour:
   position: 0
   targetVertex: {fileID: 8252644019044208262}
   collidingWithTargetVertex: 0
-  setingCollidingVertex: 0
 --- !u!33 &2854602197767764387
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -288,7 +286,7 @@ Transform:
   m_GameObject: {fileID: 5404684188576092669}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.007, y: 0.603, z: 0.041}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.04}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5404684187477405415}
@@ -318,6 +316,7 @@ MonoBehaviour:
   - {fileID: 8252644019044208262}
   - {fileID: 5013928049231823049}
   - {fileID: 1435243650835108660}
+  inCorrectPosition: 0
 --- !u!1 &5404684188581768743
 GameObject:
   m_ObjectHideFlags: 0
@@ -347,7 +346,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5404684188581768743}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.448, y: 0, z: 0.27}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -382,7 +381,6 @@ MonoBehaviour:
   position: 2
   targetVertex: {fileID: 5013928049231823049}
   collidingWithTargetVertex: 0
-  setingCollidingVertex: 0
 --- !u!33 &9205915718862080232
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -478,7 +476,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5404684189118477032}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.458, y: 0, z: -0.313}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -513,7 +511,6 @@ MonoBehaviour:
   position: 3
   targetVertex: {fileID: 1435243650835108660}
   collidingWithTargetVertex: 0
-  setingCollidingVertex: 0
 --- !u!33 &5007134838835265623
 MeshFilter:
   m_ObjectHideFlags: 0
