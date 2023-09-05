@@ -10,7 +10,6 @@ public class PuzzleVertex : MonoBehaviour
 {
     public Positions position;
     public PuzzleVertex targetVertex;
-    public bool collidingWithTargetVertex;
 
     public void AdjustPosition(float width,float height,Vector3 parentPosition)
     {
@@ -39,22 +38,7 @@ public class PuzzleVertex : MonoBehaviour
         transform.localScale = new Vector3(size,size,size);
     }
 
-    public void SetTargetVertex(PuzzleVertex[] vertices)
-    {
-        if(vertices != null)
-        {
-            foreach (PuzzleVertex vertex in vertices)
-            {
-                if (vertex.position == position)
-                {
-                    targetVertex = vertex;
-                    break;
-                }
-            }
-        }
-    }
-
-    public void DetectVertexCollision()
+    public void DetectTargetVertex()
     {
         Collider[] hitColliders = Physics.OverlapBox(transform.position, transform.localScale/2);
         foreach (Collider collider in hitColliders)
@@ -62,7 +46,7 @@ public class PuzzleVertex : MonoBehaviour
             if(collider.tag == "PuzzleVertex" && collider.gameObject != gameObject)
             {
                 PuzzleVertex vertex = collider.GetComponent<PuzzleVertex>();
-                if (vertex.position == position) 
+                if (vertex != this) 
                 {
                     targetVertex = vertex;
                 }
@@ -70,24 +54,20 @@ public class PuzzleVertex : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    public bool IsCollidingWithTarget()
     {
-        if (other.gameObject == targetVertex.gameObject)
+        Collider[] hitColliders = Physics.OverlapBox(transform.position, transform.localScale / 2);
+        foreach (Collider collider in hitColliders)
         {
-            collidingWithTargetVertex = true;
+            if (collider)
+            {
+                if(collider.tag == "PuzzleVertex" && collider.GetComponent<PuzzleVertex>() == targetVertex)
+                {
+                    return true;
+                }
+            }
         }
+        return false;
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject == targetVertex.gameObject)
-        {
-            collidingWithTargetVertex = false;
-        }
-    }
-
-    internal void NotifyTargetFace(bool inCorrectPosition)
-    {
-        targetVertex.gameObject.transform.parent.GetComponent<PuzzleFace>().inCorrectPosition = inCorrectPosition;
-    }
 }

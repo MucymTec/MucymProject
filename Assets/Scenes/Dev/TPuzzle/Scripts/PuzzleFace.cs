@@ -22,7 +22,7 @@ public class PuzzleFace : MonoBehaviour
     {
         foreach (PuzzleVertex vertex in vertices)
         {
-            vertex.DetectVertexCollision(); 
+            vertex.DetectTargetVertex(); 
         }
     }
 
@@ -40,15 +40,14 @@ public class PuzzleFace : MonoBehaviour
     {
         foreach (PuzzleVertex vertex in vertices)
         {
-            if (!vertex.collidingWithTargetVertex) 
+            
+            if (!vertex.IsCollidingWithTarget()) 
             {
                 inCorrectPosition = false;
-                vertices[0].NotifyTargetFace(inCorrectPosition);
                 return false;
             }
         }
         inCorrectPosition = true;
-        vertices[0].NotifyTargetFace(inCorrectPosition);
         return true;
     }
 
