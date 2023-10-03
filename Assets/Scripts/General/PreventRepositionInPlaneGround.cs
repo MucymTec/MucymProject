@@ -7,7 +7,7 @@ using Vuforia;
 public class PreventRepositionInPlaneGround : MonoBehaviour
 {
     public AnchorInputListenerBehaviour inputListener;
-    public PlaneFinderBehaviour planeFinder;
+    public MidAirPositionerBehaviour planeFinder;
     public GameObject mensajePlano;
 
     private void Awake()
