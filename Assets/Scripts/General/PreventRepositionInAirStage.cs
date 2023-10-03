@@ -4,10 +4,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using Vuforia;
 
-public class PreventRepositionInPlaneGround : MonoBehaviour
+public class PreventRepositionInAirStage : MonoBehaviour
 {
     public AnchorInputListenerBehaviour inputListener;
-    public PlaneFinderBehaviour planeFinder;
+    public MidAirPositionerBehaviour midAirPositioner;
     public GameObject mensajePlano;
 
     private void Awake()
@@ -20,7 +20,7 @@ public class PreventRepositionInPlaneGround : MonoBehaviour
     public void LockPlaneGround()
     {
         inputListener.enabled = false;
-        planeFinder.enabled = false;
+        midAirPositioner.enabled = false;
         mensajePlano.SetActive(false);
     }
 
@@ -29,7 +29,7 @@ public class PreventRepositionInPlaneGround : MonoBehaviour
     public void unLockPlaneGround()
     {
         inputListener.enabled = true;
-        planeFinder.enabled = true;
+        midAirPositioner.enabled = true;
         mensajePlano.SetActive(true);
     }
 }
