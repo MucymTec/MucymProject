@@ -25,7 +25,7 @@ public class ChangeImage1 : MonoBehaviour
         {
             selectNum += 1;
 
-            if (selectNum == 7)
+            if (selectNum == sprites.Length - 1)
             {
                 selectNum = 0;
             }
@@ -38,7 +38,7 @@ public class ChangeImage1 : MonoBehaviour
             }
             else if (selectNum == 0)
             {
-                selectNum = 7;
+                selectNum = sprites.Length - 1;
             }
         }
         

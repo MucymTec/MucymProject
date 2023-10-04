@@ -46,6 +46,11 @@ public class ScenesControllerScript : MonoBehaviour
         SceneManager.LoadScene("MagicSquare");
     }
 
+    public void LoadTPuzzle()
+    {
+        SceneManager.LoadScene("TPuzzle");
+    }
+
     public void CloseGame()
     {
         Application.Quit();

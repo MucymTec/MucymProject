@@ -178,6 +178,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1866563857593631802, guid: ebde408c44a5c63488303315d2fe3a24, type: 3}
+      propertyPath: manager
+      value: 
+      objectReference: {fileID: 1380251747}
+    - target: {fileID: 1866563857593631802, guid: ebde408c44a5c63488303315d2fe3a24, type: 3}
+      propertyPath: victoryPanel
+      value: 
+      objectReference: {fileID: 2130372508}
     - target: {fileID: 1866563857593631803, guid: ebde408c44a5c63488303315d2fe3a24, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -249,6 +257,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1866563857593631803, guid: ebde408c44a5c63488303315d2fe3a24, type: 3}
   m_PrefabInstance: {fileID: 2190089}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2190091 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1866563857593631802, guid: ebde408c44a5c63488303315d2fe3a24, type: 3}
+  m_PrefabInstance: {fileID: 2190089}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 358e9eff0228ff94fbfa6b39e564ca7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &114881855
 GameObject:
   m_ObjectHideFlags: 0
@@ -487,8 +506,8 @@ GameObject:
   - component: {fileID: 372709791}
   - component: {fileID: 372709794}
   - component: {fileID: 372709793}
-  - component: {fileID: 372709797}
   - component: {fileID: 372709798}
+  - component: {fileID: 372709799}
   m_Layer: 0
   m_Name: Ground Plane Stage
   m_TagString: GameController
@@ -516,7 +535,7 @@ MonoBehaviour:
   mSelectedStageType: 1
   mPlaneReference: {fileID: 0}
   mMidAirReference: {fileID: 0}
-  mPreview: {fileID: 372709797}
+  mPreview: {fileID: 372709799}
 --- !u!114 &372709791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -641,7 +660,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 1380251750}
   playerWon: 0
---- !u!114 &372709797
+--- !u!114 &372709798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 372709788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da7b780b83ce6b4a8b13a9a36469c34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputListener: {fileID: 1626281125}
+  midAirPositioner: {fileID: 1626281124}
+  mensajePlano: {fileID: 380019998}
+--- !u!114 &372709799
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -658,21 +692,6 @@ MonoBehaviour:
   mTargetName: 
   mDatasetName: 
   mCastedBehaviour: {fileID: 372709789}
---- !u!114 &372709798
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 372709788}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2da7b780b83ce6b4a8b13a9a36469c34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inputListener: {fileID: 1626281125}
-  midAirPositioner: {fileID: 1626281124}
-  mensajePlano: {fileID: 380019998}
 --- !u!1001 &380019996
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1137,8 +1156,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\xA1No muevas la pieza del centro!\nY prueba observar unos segundos la
-    figura antes de mover"
+  m_Text: Muevete alrededor de la figura y cambia el angulo de la camara para poder
+    rotar mas facilmente las figuras.
 --- !u!1 &744354324
 GameObject:
   m_ObjectHideFlags: 0
@@ -1362,7 +1381,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Rect\xE1ngulo de puntos"
+  m_Text: Figura T
 --- !u!222 &793195295
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1381,6 +1400,34 @@ PrefabInstance:
     - target: {fileID: 3248702055560437766, guid: ded9952511dc85a4b8b085750c6103e5, type: 3}
       propertyPath: m_Name
       value: LeanTouch
+      objectReference: {fileID: 0}
+    - target: {fileID: 3248702055560437881, guid: ded9952511dc85a4b8b085750c6103e5, type: 3}
+      propertyPath: onDeselected.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3248702055560437881, guid: ded9952511dc85a4b8b085750c6103e5, type: 3}
+      propertyPath: onDeselected.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3248702055560437881, guid: ded9952511dc85a4b8b085750c6103e5, type: 3}
+      propertyPath: onDeselected.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2190091}
+    - target: {fileID: 3248702055560437881, guid: ded9952511dc85a4b8b085750c6103e5, type: 3}
+      propertyPath: onDeselected.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3248702055560437881, guid: ded9952511dc85a4b8b085750c6103e5, type: 3}
+      propertyPath: onDeselected.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CheckFigureIsComplete
+      objectReference: {fileID: 0}
+    - target: {fileID: 3248702055560437881, guid: ded9952511dc85a4b8b085750c6103e5, type: 3}
+      propertyPath: onDeselected.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PuzzleFigure, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3248702055560437881, guid: ded9952511dc85a4b8b085750c6103e5, type: 3}
+      propertyPath: onDeselected.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3248702055560437883, guid: ded9952511dc85a4b8b085750c6103e5, type: 3}
       propertyPath: m_RootOrder
@@ -2557,8 +2604,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1400126034}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.09, z: 1.22}
-  m_LocalScale: {x: 7.8269, y: 0.41984, z: 4.3141}
+  m_LocalPosition: {x: 0, y: -0.62, z: 1.22}
+  m_LocalScale: {x: 12.238923, y: 0.08461036, z: 7.7304354}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 372709792}
@@ -2597,7 +2644,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 589226f666b01bb48a1ac6cf03615d69, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2852,10 +2899,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "El reto consiste en colocar todas las piezas rectangulares en las ranuras
-    de la base, de manera que cada v\xE9rtice del rect\xE1ngulo coincida en color
-    con cada v\xE9rtice el rect\xE1ngulo adyacente \n\nToca un cuadro para rotar
-    los colores.\n\n"
+  m_Text: 'Arrastra las piezas de la T para reconstruir la figura, utiliza dos dedos
+    para rotar la piezas y hacer que se forme la figura.
+
+
+'
 --- !u!222 &1637572143
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3412,7 +3460,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1613274093}
         m_TargetAssemblyTypeName: ScenesControllerScript, Assembly-CSharp
-        m_MethodName: LoadColorSquares
+        m_MethodName: LoadTPuzzle
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

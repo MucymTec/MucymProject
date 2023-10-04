@@ -11,6 +11,7 @@ public class PuzzleFigure : MonoBehaviour
     //Check all contained PuzzleFaces
     //If one vertex is touching another then asing as target face.
     public PuzzleFace[] faces;
+    public UI_Manager4E manager;
 
     //Todo: Implementar llamar desde un boton de evento.
     public void CheckFigureIsComplete()
@@ -19,12 +20,11 @@ public class PuzzleFigure : MonoBehaviour
                 if (!face.CheckAllVertexColliding())
                 {
                     print("Not complete");
-                    break;
-//                    return false;
+                    return;
                 }
         }
-        
-      //  return true;
+        manager.ShowVictoryScreen();
+        return;
     }
 
     private void Awake()
